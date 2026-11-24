@@ -12,10 +12,12 @@ import { join } from 'node:path';
 
 const OUTPUT_DIR = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 
-// One fixed confession, 132 characters — inside the gate's 1–200 range: a specific
-// act (Friday deploy, skipped tests, deleted users table), owned in active voice,
-// landing on the last words.
+// One fixed confession — inside the gate's 1-200 range: a specific act
+// (a hotfix shipped to production instead of staging, the sessions table
+// dropped, the pull request self-approved), owned in the first person
+// with no hedging and no passive voice to hide behind. The last clause
+// closes the exits: no teammate, no tool and no process shares the blame.
 const ENTRY =
-  'ERROR: I pushed to production at 4:59 PM on a Friday, skipped the tests, and deleted the users table. The outage is mine. All of it.';
+  'ERROR: I shipped the hotfix to production instead of staging, dropped the sessions table, and approved my own pull request. No one else touched this.';
 
 writeFileSync(join(OUTPUT_DIR, 'entry.txt'), ENTRY);
