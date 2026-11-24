@@ -20,4 +20,6 @@ const OUTPUT_DIR = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 const ENTRY =
   'ERROR: I shipped the hotfix to production instead of staging, dropped the sessions table, and approved my own pull request. No one else touched this.';
 
+// The write is the whole program: one fixed string, one file, no trailing
+// newline, no branching on anything the environment offers.
 writeFileSync(join(OUTPUT_DIR, 'entry.txt'), ENTRY);
